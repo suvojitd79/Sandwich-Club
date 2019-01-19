@@ -17,6 +17,7 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 import java.util.HashMap;
 
+
 public class DetailActivity extends AppCompatActivity {
 
     //store the country name - flag id
@@ -28,8 +29,11 @@ public class DetailActivity extends AppCompatActivity {
 
     //views
 
-    private TextView itemName,itemAuxiliaryNames,placeOfOrigin,description,ingredients;
+    private TextView itemName,itemAuxiliaryNames,description,ingredients,origin;
     private ImageView itemImage;
+    private ImageView country_img;
+    private RelativeLayout country_section;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +42,11 @@ public class DetailActivity extends AppCompatActivity {
 
         itemImage = findViewById(R.id.image_iv);
         itemAuxiliaryNames = findViewById(R.id.other_name);
-        placeOfOrigin = findViewById(R.id.place);
         description = findViewById(R.id.content);
         ingredients = findViewById(R.id.ingredient);
+        origin = findViewById(R.id.origin);
+        country_img = findViewById(R.id.country_image);
+        country_section = findViewById(R.id.country_zone);
 
         country.put("Austria",R.drawable.austria);
         country.put("Uruguay",R.drawable.uruguay);
@@ -50,7 +56,8 @@ public class DetailActivity extends AppCompatActivity {
         country.put("Serbia",R.drawable.serbia);
         country.put("China",R.drawable.china);
         country.put("Middle East",R.drawable.me2);
-        country.put("India",R.drawable.);
+        country.put("India",R.drawable.india);
+
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -108,7 +115,14 @@ public class DetailActivity extends AppCompatActivity {
             ingredients.setVisibility(View.GONE);
         else
             ingredients.setText(n.trim());
-        placeOfOrigin.setText(data.getPlaceOfOrigin());
+        if(country.get(data.getPlaceOfOrigin())!=null) {
+            origin.setText(" "+data.getPlaceOfOrigin());
+            country_img.setImageResource(country.get(data.getPlaceOfOrigin()));
+        }else{
+
+            country_section.setVisibility(View.GONE);
+        }
+
         description.setText(data.getDescription());
 
 
