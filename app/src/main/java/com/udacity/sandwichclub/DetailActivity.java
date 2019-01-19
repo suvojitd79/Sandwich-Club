@@ -3,6 +3,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,7 +15,12 @@ import com.squareup.picasso.Picasso;
 import com.udacity.sandwichclub.model.Sandwich;
 import com.udacity.sandwichclub.utils.JsonUtils;
 
+import java.util.HashMap;
+
 public class DetailActivity extends AppCompatActivity {
+
+    //store the country name - flag id
+    private HashMap<String,Integer> country = new HashMap<>();
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
@@ -24,7 +30,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private TextView itemName,itemAuxiliaryNames,placeOfOrigin,description,ingredients;
     private ImageView itemImage;
-    private RelativeLayout progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +37,20 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         itemImage = findViewById(R.id.image_iv);
-        itemName = findViewById(R.id.origin_name);
         itemAuxiliaryNames = findViewById(R.id.other_name);
         placeOfOrigin = findViewById(R.id.place);
         description = findViewById(R.id.content);
         ingredients = findViewById(R.id.ingredient);
 
-        progressBar = findViewById(R.id.loading);
-
-
+        country.put("Austria",1);
+        country.put("Uruguay",1);
+        country.put("United States",1);
+        country.put("Taiwan",1);
+        country.put("Cuba",1);
+        country.put("Serbia",1);
+        country.put("China",1);
+        country.put("Middle East",1);
+        country.put("India",1);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -77,15 +87,27 @@ public class DetailActivity extends AppCompatActivity {
     private void populateUI(Sandwich data) {
 
         Picasso.with(DetailActivity.this).load(data.getImage()).into(itemImage);
-        itemName.setText(data.getMainName());
         String n = "";
-        for(String x:data.getAlsoKnownAs())
-            n+=x+" ";
-        itemAuxiliaryNames.setText(n.trim());
+        int x1 = data.getAlsoKnownAs().size();
+        if(x1>2)
+            x1 = 2;
+        if(x1==0)
+            itemAuxiliaryNames.setVisibility(View.GONE);
+        else {
+            int i=0;
+            for (i = 0; i < x1 - 1; i++)
+                n += data.getAlsoKnownAs().get(i) + " ,";
+            n += data.getAlsoKnownAs().get(i);
+            itemAuxiliaryNames.setText(n.trim());
+        }
+
         n="";
         for(String x:data.getIngredients())
             n+=x+" ";
-        ingredients.setText(n.trim());
+        if(TextUtils.isEmpty(n))
+            ingredients.setVisibility(View.GONE);
+        else
+            ingredients.setText(n.trim());
         placeOfOrigin.setText(data.getPlaceOfOrigin());
         description.setText(data.getDescription());
 
