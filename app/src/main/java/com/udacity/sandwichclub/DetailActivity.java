@@ -42,15 +42,15 @@ public class DetailActivity extends AppCompatActivity {
         description = findViewById(R.id.content);
         ingredients = findViewById(R.id.ingredient);
 
-        country.put("Austria",1);
-        country.put("Uruguay",1);
-        country.put("United States",1);
-        country.put("Taiwan",1);
-        country.put("Cuba",1);
-        country.put("Serbia",1);
-        country.put("China",1);
-        country.put("Middle East",1);
-        country.put("India",1);
+        country.put("Austria",R.drawable.austria);
+        country.put("Uruguay",R.drawable.uruguay);
+        country.put("United States",R.drawable.united_states);
+        country.put("Taiwan",R.drawable.taiwan);
+        country.put("Cuba",R.drawable.cuba);
+        country.put("Serbia",R.drawable.serbia);
+        country.put("China",R.drawable.china);
+        country.put("Middle East",R.drawable.me2);
+        country.put("India",R.drawable.);
 
         Intent intent = getIntent();
         if (intent == null) {
