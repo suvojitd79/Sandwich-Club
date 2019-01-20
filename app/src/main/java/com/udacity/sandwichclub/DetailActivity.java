@@ -34,7 +34,6 @@ public class DetailActivity extends AppCompatActivity {
     private ImageView country_img;
     private RelativeLayout country_section;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,12 +108,19 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         n="";
-        for(String x:data.getIngredients())
-            n+=x+" ";
-        if(TextUtils.isEmpty(n))
+        x1 = data.getIngredients().size();
+        if(x1==0)
             ingredients.setVisibility(View.GONE);
-        else
+        else {
+            int i=0;
+            for (i = 0; i < x1 - 1; i++)
+                n += data.getIngredients().get(i) + ", ";
+            n += data.getIngredients().get(i);
             ingredients.setText(n.trim());
+        }
+
+
+
         if(country.get(data.getPlaceOfOrigin())!=null) {
             origin.setText(" "+data.getPlaceOfOrigin());
             country_img.setImageResource(country.get(data.getPlaceOfOrigin()));

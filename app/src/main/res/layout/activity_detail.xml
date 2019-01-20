@@ -94,35 +94,57 @@
             android:layout_height="50dp"
             android:layout_marginLeft="20sp"
             android:src="@drawable/china"
-           />
+            />
 
     </RelativeLayout>
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src=""
 
-        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#95a5a6"
+
+        >
+
+        <ImageView
+            android:id="@+id/rec"
+            android:layout_margin="10dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/recipe_book"
+
+            />
+
+        <ScrollView
+            android:layout_toRightOf="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:padding="10dp"
+                android:background="#2ecc71"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:layout_toRightOf="@+id/rec"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/ingredient"
+                android:textColor="#fff"
+                />
+        </ScrollView>
+    </RelativeLayout>
+
+
+
+
 
     <TextView
-        android:id="@+id/ingre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_ingredients_label"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ingredient"
-        />
-
-
-
-
-    <TextView
+        android:visibility="gone"
         android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,15 +154,18 @@
 
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
-            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:padding="15dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/content"
-            android:textStyle="bold"
+            android:textStyle="italic"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
             />
     </ScrollView>
+
 </LinearLayout>
