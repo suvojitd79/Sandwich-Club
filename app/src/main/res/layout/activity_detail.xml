@@ -1,225 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.udacity.sandwichclub.DetailActivity">
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <FrameLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
-        <ImageView
-            android:id="@+id/image_iv"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/sandwich_picture_content_description"
-            android:scaleType="centerCrop"
-            />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.udacity.sandwichclub.DetailActivity">
+
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/black_lay"
-
-            />
-
-
-
-        <TextView
-            android:visibility="visible"
-            android:textColor="#ecf0f1"
-            android:id="@+id/other_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/detail_also_known_as_label"
-            android:textSize="30sp"
-            android:textStyle="italic"
-            android:layout_gravity="bottom"
-            android:padding="10dp"
-            />
-    </FrameLayout>
-
-    <!--unused-->
-
-
-    <TextView
-        android:visibility="gone"
-        android:id="@+id/knows"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_also_known_as_label"
-        android:textSize="20sp"
-        android:textStyle="italic"
-
-        />
-
-
-    <TextView
-        android:visibility="gone"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/other_name1"
-        />
-
-
-    <!--unused-->
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RelativeLayout
-                android:background="#ecf0f1"
-                android:id="@+id/country_zone"
+            android:layout_height="250dp">
+            <ImageView
+                android:id="@+id/image_iv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sandwich_picture_content_description"
+                android:scaleType="centerCrop"
+                />
 
-                <TextView
-                    android:textStyle="bold"
-                    android:id="@+id/origin_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Origin Country"
-                    android:textAlignment="center"
-                    />
-
-                <TextView
-                    android:layout_below="@id/origin_label"
-                    android:textColor="#2c3e50"
-                    android:id="@+id/origin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="30sp"
-                    android:text="origin "
-                    />
-
-                <ImageView
-                    android:layout_below="@id/origin_label"
-                    android:background="#ecf0f1"
-                    android:id="@+id/country_image"
-                    android:layout_toRightOf="@+id/origin"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="20sp"
-                    android:src="@drawable/china"
-                    />
-
-            </RelativeLayout>
-
-
-
-
-
-            <RelativeLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#3498db"
-
-                >
-
-                <TextView
-                    android:textStyle="bold"
-                    android:textColor="#FFF"
-                    android:id="@+id/ingredient_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ingredient(s)"
-                    android:textAlignment="center"
-                    />
-
-
-                <ImageView
-                    android:layout_below="@id/ingredient_label"
-                    android:id="@+id/rec"
-                    android:layout_margin="10dp"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/recipe_book"
-
-                    />
-
-                <ScrollView
-                    android:layout_below="@id/ingredient_label"
-                    android:layout_toRightOf="@+id/rec"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <TextView
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:padding="10dp"
-                        android:background="#2980b9"
-                        android:textStyle="bold"
-                        android:layout_margin="10dp"
-                        android:layout_toRightOf="@+id/rec"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:id="@+id/ingredient"
-                        android:textColor="#fff"
-                        />
-                </ScrollView>
-            </RelativeLayout>
-
-
-
-
-
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/detail_description_label"
+                android:layout_height="250dp"
+                android:background="@drawable/black_lay"
 
                 />
 
 
-            <ScrollView
+
+            <TextView
+                android:visibility="visible"
+                android:textColor="#ecf0f1"
+                android:id="@+id/other_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_also_known_as_label"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:layout_gravity="bottom"
+                android:padding="10dp"
+                />
+        </FrameLayout>
+
+        <!--unused-->
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/knows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_also_known_as_label"
+            android:textSize="20sp"
+            android:textStyle="italic"
+
+            />
+
+
+        <TextView
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/other_name1"
+            />
+
+
+        <!--unused-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
+                    android:background="#ecf0f1"
+                    android:id="@+id/country_zone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:textColor="#000"
-                        android:id="@+id/description_label"
+                        android:textStyle="bold"
+                        android:id="@+id/origin_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Descriptions"
-                        android:textStyle="bold"
+                        android:text="Origin Country"
                         android:textAlignment="center"
                         />
-
 
                     <TextView
-                        android:layout_below="@id/description_label"
-                        android:textAlignment="center"
-                        android:textSize="20sp"
-                        android:padding="15dp"
+                        android:layout_below="@id/origin_label"
+                        android:textColor="#2c3e50"
+                        android:id="@+id/origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:text="origin "
+                        />
+
+                    <ImageView
+                        android:layout_below="@id/origin_label"
+                        android:background="#ecf0f1"
+                        android:id="@+id/country_image"
+                        android:layout_toRightOf="@+id/origin"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20sp"
+                        android:src="@drawable/china"
+                        />
+
+                </RelativeLayout>
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#3498db"
+
+                    >
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="#FFF"
+                        android:id="@+id/ingredient_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/content"
-                        android:textStyle="italic"
-                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
+                        android:text="Ingredient(s)"
+                        android:textAlignment="center"
                         />
+
+
+                    <ImageView
+                        android:layout_below="@id/ingredient_label"
+                        android:id="@+id/rec"
+                        android:layout_margin="10dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/recipe_book"
+
+                        />
+
+                    <ScrollView
+                        android:layout_below="@id/ingredient_label"
+                        android:layout_toRightOf="@+id/rec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:padding="10dp"
+                            android:background="#2980b9"
+                            android:textStyle="bold"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@+id/rec"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:id="@+id/ingredient"
+                            android:textColor="#fff"
+                            />
+                    </ScrollView>
                 </RelativeLayout>
-            </ScrollView>
 
-        </LinearLayout>
 
-    </ScrollView>
 
-</LinearLayout>
+
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_description_label"
+
+                    />
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="#000"
+                            android:id="@+id/description_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Descriptions"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            />
+
+
+                        <TextView
+                            android:layout_below="@id/description_label"
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:padding="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/content"
+                            android:textStyle="italic"
+                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
+                            />
+                    </RelativeLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</ScrollView>
