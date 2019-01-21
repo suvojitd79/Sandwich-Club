@@ -94,7 +94,13 @@ public class DetailActivity extends AppCompatActivity {
 
         Picasso.with(DetailActivity.this).load(data.getImage()).into(itemImage);
         String n = "";
-        int x1 = data.getAlsoKnownAs().size();
+        int x1 = 0;
+        if(data.getAlsoKnownAs()==null)
+        {
+
+        }
+        else
+            x1 = data.getAlsoKnownAs().size();
         if(x1>2)
             x1 = 2;
         if(x1==0)
@@ -108,7 +114,10 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         n="";
-        x1 = data.getIngredients().size();
+        if(data.getIngredients()!=null)
+            x1 = data.getIngredients().size();
+        else
+            x1 = 0;
         if(x1==0)
             ingredients.setVisibility(View.GONE);
         else {
